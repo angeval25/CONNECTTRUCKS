@@ -176,22 +176,94 @@
                 </div>
             </div>
 
-            <!-- Infraestructura y DevOps -->
+            <!-- Infraestructura y DevOps (Setup) -->
             <div class="mb-6">
                 <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
                     <i class="fas fa-cloud text-purple-500 mr-2"></i>
-                    Infraestructura y DevOps
+                    Infraestructura y DevOps (Setup Inicial)
                 </h3>
                 <div class="bg-slate-50 rounded-xl p-6">
                     <table class="w-full">
                         <thead>
                             <tr class="border-b border-slate-200">
                                 <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
-                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Mensual</th>
-                                <th class="text-right py-2 text-sm font-semibold text-slate-700">4 Meses</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Configuración DevOps (CI/CD, Monitoreo, Seguridad)</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Setup Infraestructura</td>
+                                <td class="py-3 text-sm text-right font-bold text-purple-600">$2,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Integraciones y Servicios (Setup) -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-plug text-orange-500 mr-2"></i>
+                    Integraciones y Servicios (Setup Inicial)
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Setup</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Stripe/PayPal (Configuración de Pagos)</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$500</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">OCR para Verificación Documental (Setup)</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$300</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Email Service (SendGrid/AWS SES - Setup)</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$200</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">SMS/Notificaciones Push (Setup)</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$200</td>
+                            </tr>
+                            <tr class="bg-orange-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Setup Integraciones</td>
+                                <td class="py-3 text-sm text-right font-bold text-orange-600">$1,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Costos Recurrentes Mensuales (Fase 1) -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-sync-alt text-blue-500 mr-2"></i>
+                    Costos Recurrentes Mensuales (Durante Fase 1)
+                </h3>
+                <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
+                    <p class="text-sm text-slate-700 mb-4">
+                        <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                        Estos costos se pagan mensualmente durante el desarrollo y operación de la plataforma.
+                    </p>
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-blue-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo Mensual</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">4 Meses</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-blue-100">
                             <tr>
                                 <td class="py-3 text-sm text-slate-700">AWS Cloud (EC2, RDS, S3)</td>
                                 <td class="py-3 text-sm text-right text-slate-600">$500</td>
@@ -213,63 +285,35 @@
                                 <td class="py-3 text-sm text-right font-semibold text-slate-900">$400</td>
                             </tr>
                             <tr>
-                                <td class="py-3 text-sm text-slate-700">Configuración DevOps (Setup inicial)</td>
-                                <td class="py-3 text-sm text-right text-slate-600">-</td>
-                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
-                            </tr>
-                            <tr class="bg-purple-50">
-                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Infraestructura</td>
-                                <td class="py-3 text-sm text-right font-bold text-slate-900">$750/mes</td>
-                                <td class="py-3 text-sm text-right font-bold text-purple-600">$5,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Integraciones y Servicios -->
-            <div class="mb-6">
-                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
-                    <i class="fas fa-plug text-orange-500 mr-2"></i>
-                    Integraciones y Servicios
-                </h3>
-                <div class="bg-slate-50 rounded-xl p-6">
-                    <table class="w-full">
-                        <thead>
-                            <tr class="border-b border-slate-200">
-                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
-                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Setup</th>
-                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Mensual</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-100">
-                            <tr>
-                                <td class="py-3 text-sm text-slate-700">Stripe/PayPal (Pagos)</td>
-                                <td class="py-3 text-sm text-right text-slate-600">$500</td>
-                                <td class="py-3 text-sm text-right text-slate-600">2.9% + $0.30</td>
-                            </tr>
-                            <tr>
                                 <td class="py-3 text-sm text-slate-700">OCR para Verificación Documental</td>
-                                <td class="py-3 text-sm text-right text-slate-600">$300</td>
                                 <td class="py-3 text-sm text-right text-slate-600">$200</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$800</td>
                             </tr>
                             <tr>
                                 <td class="py-3 text-sm text-slate-700">Email Service (SendGrid/AWS SES)</td>
-                                <td class="py-3 text-sm text-right text-slate-600">$200</td>
                                 <td class="py-3 text-sm text-right text-slate-600">$50</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$200</td>
                             </tr>
                             <tr>
                                 <td class="py-3 text-sm text-slate-700">SMS/Notificaciones Push</td>
-                                <td class="py-3 text-sm text-right text-slate-600">$200</td>
                                 <td class="py-3 text-sm text-right text-slate-600">$100</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$400</td>
                             </tr>
-                            <tr class="bg-orange-50">
-                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Integraciones</td>
-                                <td class="py-3 text-sm text-right font-bold text-slate-900">$1,200</td>
-                                <td class="py-3 text-sm text-right font-bold text-orange-600">$350/mes</td>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Stripe/PayPal (Comisión por transacción)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">2.9% + $0.30</td>
+                                <td class="py-3 text-sm text-right text-slate-500 italic">Variable</td>
+                            </tr>
+                            <tr class="bg-blue-100 border-t-2 border-blue-300">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Costos Recurrentes</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">$1,100/mes</td>
+                                <td class="py-3 text-sm text-right font-bold text-blue-600">$4,400</td>
                             </tr>
                         </tbody>
                     </table>
+                    <p class="text-xs text-slate-600 mt-4 italic">
+                        * Los costos de Stripe/PayPal son variables según el volumen de transacciones (2.9% + $0.30 por transacción)
+                    </p>
                 </div>
             </div>
 
@@ -317,15 +361,23 @@
             <!-- Resumen Fase 1 -->
             <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl p-6 text-white">
                 <h3 class="text-2xl font-bold mb-4">Resumen Fase 1: MVP</h3>
-                <div class="grid md:grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-3 gap-4 mb-4">
                     <div>
                         <p class="text-sm opacity-90 mb-2">Total Horas de Desarrollo:</p>
                         <p class="text-3xl font-extrabold">970h</p>
                     </div>
                     <div>
-                        <p class="text-sm opacity-90 mb-2">Costo Total Fase 1:</p>
-                        <p class="text-3xl font-extrabold">$61,200</p>
+                        <p class="text-sm opacity-90 mb-2">Costo Desarrollo + Setup:</p>
+                        <p class="text-3xl font-extrabold">$56,800</p>
                     </div>
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Costos Recurrentes (4 meses):</p>
+                        <p class="text-3xl font-extrabold">$4,400</p>
+                    </div>
+                </div>
+                <div class="border-t border-white/30 pt-4 mt-4">
+                    <p class="text-sm opacity-90 mb-2">Costo Total Fase 1 (Incluye 4 meses de servicios):</p>
+                    <p class="text-4xl font-extrabold">$61,200</p>
                 </div>
             </div>
         </section>
@@ -372,63 +424,159 @@
                             <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
                         </tr>
                         <tr>
-                            <td class="py-3 text-sm text-slate-700">Infraestructura (4 meses adicionales)</td>
-                            <td class="py-3 text-sm text-right text-slate-600">-</td>
-                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3 text-sm text-slate-700">Integraciones (4 meses adicionales)</td>
-                            <td class="py-3 text-sm text-right text-slate-600">-</td>
-                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
-                        </tr>
-                        <tr>
                             <td class="py-3 text-sm text-slate-700">Testing y QA Fase 2</td>
                             <td class="py-3 text-sm text-right text-slate-600">50h</td>
                             <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,500</td>
                         </tr>
                         <tr class="bg-orange-50">
-                            <td class="py-3 text-sm font-bold text-slate-900">Subtotal Fase 2</td>
+                            <td class="py-3 text-sm font-bold text-slate-900">Subtotal Desarrollo Fase 2</td>
                             <td class="py-3 text-sm text-right font-bold text-slate-900">410h</td>
-                            <td class="py-3 text-sm text-right font-bold text-orange-600">$25,500</td>
+                            <td class="py-3 text-sm text-right font-bold text-orange-600">$20,500</td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Costos Recurrentes Mensuales (Fase 2) -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-sync-alt text-blue-500 mr-2"></i>
+                    Costos Recurrentes Mensuales (Durante Fase 2)
+                </h3>
+                <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-blue-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo Mensual</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">4 Meses</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-blue-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Infraestructura Cloud (AWS, CDN, CI/CD, Monitoreo)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$750</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Servicios e Integraciones (OCR, Email, SMS)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$350</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$1,400</td>
+                            </tr>
+                            <tr class="bg-blue-100 border-t-2 border-blue-300">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Costos Recurrentes Fase 2</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">$1,100/mes</td>
+                                <td class="py-3 text-sm text-right font-bold text-blue-600">$4,400</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Resumen Fase 2 -->
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-6 text-white">
+                <h3 class="text-2xl font-bold mb-4">Resumen Fase 2: Beta Público</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Total Horas de Desarrollo:</p>
+                        <p class="text-3xl font-extrabold">410h</p>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Costo Desarrollo:</p>
+                        <p class="text-3xl font-extrabold">$20,500</p>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Costos Recurrentes (4 meses):</p>
+                        <p class="text-3xl font-extrabold">$4,400</p>
+                    </div>
+                </div>
+                <div class="border-t border-white/30 pt-4 mt-4">
+                    <p class="text-sm opacity-90 mb-2">Costo Total Fase 2 (Incluye 4 meses de servicios):</p>
+                    <p class="text-4xl font-extrabold">$24,900</p>
+                </div>
+            </div>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Costos Recurrentes Mensuales -->
+        <!-- Costos Recurrentes Mensuales Post-Lanzamiento -->
         <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
             <h2 class="text-3xl font-bold text-slate-900 mb-6">
                 Costos <span class="accent-gradient">Recurrentes</span> (Post-Lanzamiento)
             </h2>
-            <div class="bg-slate-50 rounded-xl p-6">
+            <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200 mb-6">
+                <p class="text-sm text-slate-700 mb-4">
+                    <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                    Estos costos se pagan mensualmente una vez que la plataforma esté en producción.
+                </p>
                 <table class="w-full">
                     <thead>
-                        <tr class="border-b border-slate-200">
+                        <tr class="border-b border-blue-200">
                             <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
                             <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo Mensual</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-100">
+                    <tbody class="divide-y divide-blue-100">
                         <tr>
-                            <td class="py-3 text-sm text-slate-700">Infraestructura Cloud (AWS)</td>
-                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$750 - $2,000</td>
+                            <td class="py-3 text-sm text-slate-700">Infraestructura Cloud (AWS - EC2, RDS, S3, CDN)</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$500 - $2,000</td>
                         </tr>
                         <tr>
-                            <td class="py-3 text-sm text-slate-700">Integraciones y APIs</td>
-                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$500</td>
+                            <td class="py-3 text-sm text-slate-700">CI/CD Pipeline</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$50</td>
                         </tr>
                         <tr>
-                            <td class="py-3 text-sm text-slate-700">Mantenimiento y Soporte</td>
+                            <td class="py-3 text-sm text-slate-700">Monitoreo y Logging</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$100</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">OCR para Verificación Documental</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$200</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Email Service (SendGrid/AWS SES)</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$50</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">SMS/Notificaciones Push</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$100</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Stripe/PayPal (Comisión por transacción)</td>
+                            <td class="py-3 text-sm text-right text-slate-500 italic">2.9% + $0.30</td>
+                        </tr>
+                        <tr class="bg-blue-100 border-t-2 border-blue-300">
+                            <td class="py-3 text-sm font-bold text-slate-900">Total Mensual Base (sin Stripe/PayPal)</td>
+                            <td class="py-3 text-sm text-right font-bold text-blue-600">$1,000 - $2,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-xs text-slate-600 mt-4 italic">
+                    * Los costos de infraestructura varían según el tráfico y uso. Stripe/PayPal cobra comisión por cada transacción.
+                </p>
+            </div>
+            <div class="bg-amber-50 rounded-xl p-6 border-2 border-amber-200">
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Mantenimiento y Soporte (Opcional)</h3>
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-amber-200">
+                            <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-amber-100">
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Mantenimiento y Soporte Técnico</td>
                             <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
                         </tr>
                         <tr>
-                            <td class="py-3 text-sm text-slate-700">Monitoreo y Seguridad</td>
+                            <td class="py-3 text-sm text-slate-700">Seguridad y Actualizaciones</td>
                             <td class="py-3 text-sm text-right font-semibold text-slate-900">$300</td>
                         </tr>
-                        <tr class="bg-blue-50">
-                            <td class="py-3 text-sm font-bold text-slate-900">Total Mensual Estimado</td>
-                            <td class="py-3 text-sm text-right font-bold text-blue-600">$3,550 - $4,800</td>
+                        <tr class="bg-amber-100 border-t-2 border-amber-300">
+                            <td class="py-3 text-sm font-bold text-slate-900">Total Mantenimiento (Opcional)</td>
+                            <td class="py-3 text-sm text-right font-bold text-amber-600">$2,300/mes</td>
                         </tr>
                     </tbody>
                 </table>
@@ -445,13 +593,21 @@
                 </div>
                 <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
                     <p class="text-sm opacity-90 mb-2">Fase 2: Beta</p>
-                    <p class="text-3xl font-extrabold">$25,500</p>
+                    <p class="text-3xl font-extrabold">$24,900</p>
                 </div>
             </div>
-            <div class="bg-amber-500 rounded-xl p-6 text-center">
-                <p class="text-sm opacity-90 mb-2">Inversión Total (8 meses)</p>
-                <p class="text-5xl font-extrabold">$86,700</p>
-                <p class="text-sm mt-2 opacity-90">+ Costos recurrentes mensuales: $3,550 - $4,800</p>
+            <div class="bg-amber-500 rounded-xl p-6 text-center mb-6">
+                <p class="text-sm opacity-90 mb-2">Inversión Total Desarrollo + Setup (8 meses)</p>
+                <p class="text-5xl font-extrabold">$77,300</p>
+            </div>
+            <div class="bg-blue-500 rounded-xl p-6 text-center mb-6">
+                <p class="text-sm opacity-90 mb-2">Costos Recurrentes (8 meses de servicios)</p>
+                <p class="text-5xl font-extrabold">$8,800</p>
+            </div>
+            <div class="bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl p-6 text-center">
+                <p class="text-sm opacity-90 mb-2">Costo Total Inversión (8 meses)</p>
+                <p class="text-5xl font-extrabold">$86,100</p>
+                <p class="text-sm mt-2 opacity-90">+ Costos recurrentes post-lanzamiento: $1,100/mes</p>
             </div>
             <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
                 <div>
