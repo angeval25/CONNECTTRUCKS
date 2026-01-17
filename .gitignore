@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+*.log
+connect-trucks-proposal.pdf
+package-lock.json

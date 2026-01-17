@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Trucks - Plataforma SaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .accent-gradient {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .flow-container {
+            position: relative;
+        }
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .flow-container::before {
+                left: 50%;
+                margin-left: -1px;
+            }
+        }
+        .step-dot {
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .step-dot:hover {
+            transform: scale(1.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .metric-number {
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .chart-bar {
+            transition: all 0.6s ease;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes growBar {
+            from { height: 0; }
+        }
+        .grow-animation {
+            animation: growBar 1.5s ease-out;
+        }
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navegación Mejorada -->
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-amber-500 p-1.5 sm:p-2 rounded-lg">
+                        <i class="fas fa-truck-fast text-white text-sm sm:text-base"></i>
+                    </div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-bold tracking-tighter">CONNECT<span class="text-amber-500">TRUCKS</span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Mejorado -->
+    <section class="relative pt-12 sm:pt-16 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-white to-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 max-w-6xl text-center">
+            <div class="inline-flex items-center space-x-2 bg-amber-100 text-amber-700 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold mb-6 sm:mb-8">
+                <span class="whitespace-nowrap">REVOLUCIÓN EN CATERING MÓVIL</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-slate-900 mb-6 md:mb-8 px-2">
+                Donde el <span class="accent-gradient">Sabor</span> se une con la <span class="accent-gradient">Logística</span>.
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8 md:mb-12 px-4">
+                La plataforma que profesionaliza el sector Food Truck mediante perfiles verificados y un motor de IA que garantiza el éxito de cada evento.
+            </p>
+        </div>
+    </section>
+
+    <!-- PARTE 1: LA IDEA -->
+    <!-- Problema/Oportunidad de Mercado -->
+    <section id="idea" class="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 sm:mb-4 px-2">
+                    El <span class="accent-gradient">Problema</span> y la <span class="accent-gradient">Oportunidad</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto px-4">
+                    Un mercado fragmentado con ineficiencias masivas esperando disrupción tecnológica
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-10 sm:mb-16">
+                <div class="bg-red-50 border-2 border-red-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 card-hover">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-red-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-lg sm:text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">El Problema Actual</h3>
+                    </div>
+                    <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base text-slate-700">
+                        <li class="flex items-start space-x-2 sm:space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 flex-shrink-0"></i>
+                            <span><strong>2-3 semanas</strong> para encontrar y contratar un food truck</span>
+                        </li>
+                        <li class="flex items-start space-x-2 sm:space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 flex-shrink-0"></i>
+                            <span><strong>Sin verificación</strong> de permisos, seguros o certificaciones</span>
+                        </li>
+                        <li class="flex items-start space-x-2 sm:space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 flex-shrink-0"></i>
+                            <span><strong>Proceso manual</strong> con múltiples llamadas y negociaciones</span>
+                        </li>
+                        <li class="flex items-start space-x-2 sm:space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 flex-shrink-0"></i>
+                            <span><strong>30-40% sobrecostos</strong> por intermediarios y falta de transparencia</span>
+                        </li>
+                        <li class="flex items-start space-x-2 sm:space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-0.5 sm:mt-1 flex-shrink-0"></i>
+                            <span><strong>Alto riesgo</strong> de incumplimiento y eventos fallidos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 border-2 border-green-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 card-hover">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-rocket text-lg sm:text-xl md:text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">La Oportunidad</h3>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Mercado en crecimiento con alta demanda de servicios de catering móvil para eventos corporativos. 
+                            Sector fragmentado con necesidad de profesionalización y verificación.
+                        </p>
+                        <p class="text-slate-700 leading-relaxed">
+                            Oportunidad de consolidar el mercado mediante tecnología, verificación documental e inteligencia artificial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Flujo Visual Mejorada -->
+    <section id="flujo" class="py-12 sm:py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+            <div class="text-center mb-10 sm:mb-16 md:mb-20">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 sm:mb-4 px-2">Cómo Funciona</h2>
+                <p class="text-sm sm:text-base text-slate-500 px-4">Nuestro proceso inteligente paso a paso</p>
+            </div>
+
+            <!-- Dos Rutas del Usuario -->
+            <div class="mb-10 sm:mb-16 md:mb-20 grid md:grid-cols-2 gap-4 sm:gap-6">
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 card-hover">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-paper-plane text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-slate-900">Ruta 1: Request Automático</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                        El cliente crea un <strong>request</strong> con los detalles del evento. La IA analiza y notifica automáticamente a las loncheras calificadas, quienes envían propuestas. El cliente selecciona de un dashboard centralizado.
+                    </p>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 card-hover">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-500 text-white rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-comments text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-slate-900">Ruta 2: Contacto Directo</h3>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+                        El cliente puede <strong>contactar directamente</strong> con una lonchera específica que haya visto en el marketplace. Inicia conversación y negociación directa, con la plataforma facilitando el proceso de pago y seguimiento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mb-8 sm:mb-12 px-4">
+                <p class="text-sm sm:text-base md:text-lg text-slate-600 font-semibold">Ambas rutas convergen en el mismo proceso de verificación y seguimiento</p>
+            </div>
+
+            <!-- Flujo Lineal Vertical -->
+            <div class="space-y-8 sm:space-y-12">
+                <!-- Paso 1 -->
+                <div class="relative flex flex-col items-center group">
+                    <div class="flex items-center w-full mb-4">
+                        <div class="step-dot w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white flex-shrink-0">
+                            <i class="fas fa-id-card text-sm sm:text-base"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-1">Paso 01</h4>
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Curaduría de Calidad</h3>
+                        </div>
+                    </div>
+                    <div class="w-full pl-0 sm:pl-16 md:pl-20">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-2">Solo unidades verificadas con permisos vigentes y seguros de responsabilidad civil entran al ecosistema.</p>
+                        <span class="inline-block text-[10px] sm:text-xs font-bold text-slate-400 tracking-tighter uppercase">Validación Documental Activa</span>
+                    </div>
+                </div>
+
+                <!-- Línea conectora -->
+                <div class="flex justify-center">
+                    <div class="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-slate-300 to-slate-200"></div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="relative flex flex-col items-center group">
+                    <div class="flex items-center w-full mb-4">
+                        <div class="step-dot w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-amber-500 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white flex-shrink-0">
+                            <i class="fas fa-filter text-sm sm:text-base"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-1">Paso 02</h4>
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Filtro de IA Predictivo</h3>
+                        </div>
+                    </div>
+                    <div class="w-full pl-0 sm:pl-16 md:pl-20">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-2">La IA analiza el evento y <strong>notifica exclusivamente</strong> a las loncheras que encajan con el presupuesto y perfil técnico.</p>
+                        <span class="inline-block mt-2 px-3 py-1 bg-amber-100 text-amber-700 text-[10px] sm:text-xs font-bold rounded-full">REDUCCIÓN DE RUIDO</span>
+                    </div>
+                </div>
+
+                <!-- Línea conectora -->
+                <div class="flex justify-center">
+                    <div class="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-amber-300 to-slate-200"></div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative flex flex-col items-center group">
+                    <div class="flex items-center w-full mb-4">
+                        <div class="step-dot w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-slate-900 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white flex-shrink-0">
+                            <i class="fas fa-file-invoice-dollar text-sm sm:text-base"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-1">Paso 03</h4>
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Postulación Dinámica</h3>
+                        </div>
+                    </div>
+                    <div class="w-full pl-0 sm:pl-16 md:pl-20">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed">Los proveedores aceptan o envían <strong>contrapropuestas</strong> técnicas con desgloses de costos transparentes.</p>
+                    </div>
+                </div>
+
+                <!-- Línea conectora -->
+                <div class="flex justify-center">
+                    <div class="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-slate-300 to-green-200"></div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="relative flex flex-col items-center group">
+                    <div class="flex items-center w-full mb-4">
+                        <div class="step-dot w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white flex-shrink-0">
+                            <i class="fas fa-check-double text-sm sm:text-base"></i>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="text-amber-500 font-bold text-xs sm:text-sm uppercase mb-1">Paso 04</h4>
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Dashboard de Selección</h3>
+                        </div>
+                    </div>
+                    <div class="w-full pl-0 sm:pl-16 md:pl-20">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed mb-2">El cliente recibe un "Pull" centralizado donde compara fotos, contrapropuestas y precios en una interfaz tipo Airbnb.</p>
+                        <span class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-700 text-[10px] sm:text-xs font-bold rounded-full">CIERRE GARANTIZADO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Módulo de Seguimiento IA -->
+            <div class="mt-12 sm:mt-16 md:mt-32 p-1 bg-slate-900 rounded-2xl sm:rounded-[3rem] shadow-2xl">
+                <div class="bg-slate-800 rounded-xl sm:rounded-[2.8rem] p-6 sm:p-8 md:p-10 lg:p-16 text-white border border-white/5">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-6 sm:mb-8">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-500/20 text-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bolt animate-pulse text-sm sm:text-base"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold italic">Asistente de Cierre Activo</h3>
+                    </div>
+                    <p class="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-2xl">
+                        Si el cliente no decide en 24 horas, nuestra IA interviene mediante un asistente conversacional que contacta al cliente, aclara dudas técnicas y facilita la decisión final.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-amber-500 font-bold text-xl mb-1">+40%</p>
+                            <p class="text-xs text-slate-400 uppercase">Conversión</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-amber-500 font-bold text-xl mb-1">24/7</p>
+                            <p class="text-xs text-slate-400 uppercase">Seguimiento</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/10 hidden md:block">
+                            <p class="text-amber-500 font-bold text-xl mb-1">Omnicanal</p>
+                            <p class="text-xs text-slate-400 uppercase">Voz y Chat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTE 2: LOS NÚMEROS -->
+    <!-- Modelo de Negocio Expandido -->
+    <section id="numeros" class="py-12 sm:py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 sm:mb-4 px-2">
+                    Modelo de <span class="accent-gradient">Negocio</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto px-4">
+                    Múltiples streams de revenue escalables
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-amber-200 shadow-lg card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-amber-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-percentage text-lg sm:text-xl md:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-900 text-center">Take Rate</h4>
+                    <p class="text-sm sm:text-base text-slate-700 text-center">Comisión del <strong class="text-amber-600">12-15%</strong> por cada evento cerrado exitosamente.</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-blue-200 shadow-lg card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-rocket text-lg sm:text-xl md:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-900 text-center">Suscripción Boost</h4>
+                    <p class="text-sm sm:text-base text-slate-700 text-center">Visibilidad prioritaria en el "Pull" de selección del cliente.</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-green-200 shadow-lg card-hover">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-green-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-shield-halved text-lg sm:text-xl md:text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg sm:text-xl mb-2 sm:mb-3 text-slate-900 text-center">Cumplimiento B2B</h4>
+                    <p class="text-sm sm:text-base text-slate-700 text-center">Gestión activa de licencias y seguros para cuentas corporativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventaja Competitiva -->
+    <section class="py-12 sm:py-16 md:py-24 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 sm:mb-4 px-2">
+                    Ventaja <span class="accent-gradient">Competitiva</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto px-4">
+                    Diferenciadores clave que nos posicionan como líderes del mercado
+                </p>
+            </div>
+
+            <!-- Tabla Desktop -->
+            <div class="hidden md:block bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 shadow-xl border border-slate-100 mb-8 sm:mb-12">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b-2 border-slate-200">
+                                <th class="text-left py-4 px-4 text-sm font-bold text-slate-900">Característica</th>
+                                <th class="text-center py-4 px-4 text-sm font-bold text-amber-600">Connect Trucks</th>
+                                <th class="text-center py-4 px-4 text-sm font-bold text-slate-600">Búsqueda Manual</th>
+                                <th class="text-center py-4 px-4 text-sm font-bold text-slate-600">Marketplaces Genéricos</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Verificación Documental</td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-check-circle text-green-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">IA Predictiva (Matching)</td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-check-circle text-green-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Asistente IA de Cierre</td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-check-circle text-green-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Tiempo de Contratación</td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm font-bold text-green-600">&lt;48 horas</span></td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm text-slate-500">2-3 semanas</span></td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm text-slate-500">1-2 semanas</span></td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Ahorro de Costos</td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm font-bold text-green-600">Significativo</span></td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm text-slate-500">Mínimo</span></td>
+                                <td class="py-4 px-4 text-center"><span class="text-sm text-slate-500">Moderado</span></td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Transparencia de Precios</td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-check-circle text-green-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-question-circle text-amber-500 text-xl"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 text-sm font-semibold text-slate-700">Seguimiento Post-Contrato</td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-check-circle text-green-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                                <td class="py-4 px-4 text-center"><i class="fas fa-times-circle text-red-500 text-xl"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cards Móvil -->
+            <div class="md:hidden space-y-4 mb-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Verificación Documental</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">IA Predictiva (Matching)</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Asistente IA de Cierre</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Tiempo de Contratación</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <span class="text-xs font-bold text-green-600">&lt;48 horas</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <span class="text-xs text-slate-500">2-3 semanas</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <span class="text-xs text-slate-500">1-2 semanas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Ahorro de Costos</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <span class="text-xs font-bold text-green-600">Significativo</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <span class="text-xs text-slate-500">Mínimo</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <span class="text-xs text-slate-500">Moderado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Transparencia de Precios</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <i class="fas fa-question-circle text-amber-500"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-sm text-slate-900 mb-3">Seguimiento Post-Contrato</h4>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Connect Trucks</span>
+                            <i class="fas fa-check-circle text-green-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Búsqueda Manual</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-600">Marketplaces Genéricos</span>
+                            <i class="fas fa-times-circle text-red-500"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+                <div class="bg-white p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-slate-100 shadow-sm card-hover">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fas fa-lock text-base sm:text-lg md:text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg mb-2 text-slate-900">Barrera de Entrada</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">Verificación documental y motor de IA requieren inversión técnica significativa que limita competencia</p>
+                </div>
+                <div class="bg-white p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-slate-100 shadow-sm card-hover">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fas fa-network-wired text-base sm:text-lg md:text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg mb-2 text-slate-900">Efecto Red</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">Más proveedores = mejor matching = más clientes = más proveedores (ciclo virtuoso)</p>
+                </div>
+                <div class="bg-white p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-slate-100 shadow-sm card-hover">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fas fa-database text-base sm:text-lg md:text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg mb-2 text-slate-900">Ventaja de Datos</h4>
+                    <p class="text-xs sm:text-sm text-slate-600">Cada evento mejora el algoritmo de IA, creando ventaja competitiva que crece con el tiempo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="py-24 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+                    Roadmap de <span class="accent-gradient">Desarrollo</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    Plan de ejecución estratégico con hitos clave
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Línea vertical -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-400 to-orange-500"></div>
+
+                <div class="space-y-12">
+                    <!-- Fase 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-5/12 md:text-right pr-0 md:pr-12 order-2 md:order-1">
+                            <div class="bg-amber-100 border-2 border-amber-300 rounded-2xl p-6 card-hover">
+                                <div class="inline-block bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold mb-3">FASE 1</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">MVP (Meses 1-4)</h3>
+                                <ul class="text-sm text-slate-700 space-y-2">
+                                    <li>• Plataforma web básica</li>
+                                    <li>• Sistema de registro y verificación</li>
+                                    <li>• Motor de IA básico (matching simple)</li>
+                                    <li>• Dashboard cliente y proveedor</li>
+                                    <li>• Sistema de pagos integrado</li>
+                                </ul>
+                                <p class="text-xs text-amber-700 font-semibold mt-4">Hito: Lanzamiento beta</p>
+                            </div>
+                        </div>
+                        <div class="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white mb-6 md:mb-0 order-1 md:order-2 z-10">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div class="w-full md:w-5/12 pl-0 md:pl-12 order-3"></div>
+                    </div>
+
+                    <!-- Fase 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-5/12 pr-0 md:pr-12 order-2 md:order-3"></div>
+                        <div class="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white mb-6 md:mb-0 order-1 md:order-2 z-10">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div class="w-full md:w-5/12 pl-0 md:pl-12 order-3 md:order-1">
+                            <div class="bg-orange-100 border-2 border-orange-300 rounded-2xl p-6 card-hover">
+                                <div class="inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold mb-3">FASE 2</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Beta Público (Meses 5-8)</h3>
+                                <ul class="text-sm text-slate-700 space-y-2">
+                                    <li>• App móvil iOS/Android</li>
+                                    <li>• IA avanzada con aprendizaje</li>
+                                    <li>• Asistente conversacional</li>
+                                    <li>• Integraciones B2B (APIs)</li>
+                                    <li>• Sistema de analytics avanzado</li>
+                                </ul>
+                                <p class="text-xs text-orange-700 font-semibold mt-4">Hito: Expansión de usuarios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fase 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-5/12 md:text-right pr-0 md:pr-12 order-2 md:order-1">
+                            <div class="bg-green-100 border-2 border-green-300 rounded-2xl p-6 card-hover">
+                                <div class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold mb-3">FASE 3</div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Lanzamiento Comercial (Meses 9-12)</h3>
+                                <ul class="text-sm text-slate-700 space-y-2">
+                                    <li>• Marketing y adquisición masiva</li>
+                                    <li>• Expansión geográfica</li>
+                                    <li>• Programa de partners corporativos</li>
+                                </ul>
+                                <p class="text-xs text-green-700 font-semibold mt-4">Hito: Escalamiento comercial</p>
+                            </div>
+                        </div>
+                        <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl border-4 border-white mb-6 md:mb-0 order-1 md:order-2 z-10">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div class="w-full md:w-5/12 pl-0 md:pl-12 order-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTE 3: EL PROCESO DE SOFTWARE -->
+    <!-- Cómo Funciona la Plataforma (CRÍTICO) -->
+    <section id="plataforma" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-amber-100 text-amber-700 px-4 py-2 rounded-full text-xs font-bold mb-4">
+                    ARQUITECTURA TÉCNICA
+                </div>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
+                    Cómo Funciona la <span class="accent-gradient">Plataforma</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    Arquitectura escalable diseñada para crecimiento exponencial con tecnología de punta
+                </p>
+            </div>
+
+            <!-- Stack Tecnológico -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-12 shadow-lg border border-slate-100">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center space-x-3">
+                    <i class="fas fa-code text-amber-500"></i>
+                    <span>Stack Tecnológico</span>
+                </h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                        <i class="fas fa-window-maximize text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Frontend</h4>
+                        <p class="text-sm text-slate-600">React.js, Next.js<br/>Tailwind CSS</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                        <i class="fas fa-server text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Backend</h4>
+                        <p class="text-sm text-slate-600">Node.js, Express<br/>Microservicios</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                        <i class="fas fa-database text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Base de Datos</h4>
+                        <p class="text-sm text-slate-600">PostgreSQL<br/>Redis Cache</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-50 rounded-2xl">
+                        <i class="fas fa-cloud text-3xl text-amber-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Infraestructura</h4>
+                        <p class="text-sm text-slate-600">AWS Cloud<br/>Auto-scaling</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitectura de Alto Nivel -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-12 shadow-lg border border-slate-100">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center space-x-3">
+                    <i class="fas fa-sitemap text-amber-500"></i>
+                    <span>Arquitectura de Alto Nivel</span>
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border border-amber-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Capa de Usuarios</h4>
+                        </div>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>• Dashboard Cliente (Web/Mobile)</li>
+                            <li>• App Proveedor (Mobile-first)</li>
+                            <li>• Panel Administrativo</li>
+                            <li>• API Pública para integraciones</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-blue-500 text-white rounded-xl flex items-center justify-center">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Capa de Servicios</h4>
+                        </div>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>• Motor de IA (Matching)</li>
+                            <li>• Sistema de Verificación</li>
+                            <li>• Gestión de Pagos</li>
+                            <li>• Notificaciones Push/Email</li>
+                            <li>• Asistente Conversacional IA</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl border border-green-200">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="font-bold text-lg">Capa de Datos</h4>
+                        </div>
+                        <ul class="text-sm text-slate-700 space-y-2">
+                            <li>• Base de datos relacional</li>
+                            <li>• Cache en memoria (Redis)</li>
+                            <li>• Almacenamiento de documentos</li>
+                            <li>• Analytics y logs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motor de IA -->
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 mb-12 text-white shadow-2xl">
+                <div class="flex items-center space-x-4 mb-8">
+                    <div class="w-16 h-16 bg-amber-500/20 text-amber-500 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Motor de IA Predictivo</h3>
+                        <p class="text-slate-300 text-sm">Algoritmos de matching inteligente</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4 text-amber-400">Cómo Funciona</h4>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                                <span><strong>Análisis de Evento:</strong> Presupuesto, ubicación, tipo, número de personas, preferencias</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                                <span><strong>Scoring de Proveedores:</strong> Algoritmo ML que evalúa fit basado en historial, ratings, disponibilidad</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                                <span><strong>Filtrado Inteligente:</strong> Solo notifica a proveedores con alto match score</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                                <span><strong>Aprendizaje Continuo:</strong> Mejora con cada evento cerrado y feedback</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4 text-amber-400">Tecnologías IA</h4>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <p class="font-bold mb-2">Machine Learning</p>
+                                <p class="text-sm text-slate-400">Modelos de clasificación y regresión para scoring</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <p class="font-bold mb-2">NLP (Procesamiento de Lenguaje)</p>
+                                <p class="text-sm text-slate-400">Asistente conversacional para seguimiento y cierre</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <p class="font-bold mb-2">Computer Vision</p>
+                                <p class="text-sm text-slate-400">Verificación automática de documentos y fotos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flujos de Usuario -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center space-x-3">
+                        <i class="fas fa-user-tie text-blue-500"></i>
+                        <span>Flujo Cliente (B2B)</span>
+                    </h3>
+                    <ol class="space-y-4 text-slate-700">
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                            <span>Cliente crea solicitud de evento con presupuesto y requisitos</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                            <span>IA analiza y notifica a proveedores calificados</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                            <span>Recibe "Pull" con propuestas y contrapropuestas en dashboard</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                            <span>Selecciona proveedor, pago seguro, y tracking en tiempo real</span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center space-x-3">
+                        <i class="fas fa-truck text-amber-500"></i>
+                        <span>Flujo Proveedor</span>
+                    </h3>
+                    <ol class="space-y-4 text-slate-700">
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                            <span>Registro con verificación documental (permisos, seguros, fotos)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                            <span>Recibe notificaciones de eventos que califican (filtrado IA)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                            <span>Acepta o envía contrapropuesta con desglose de costos</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                            <span>Gestión de eventos, pagos y calificaciones en app móvil</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Sistema de Verificación -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-slate-100 mb-12">
+                <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center space-x-3">
+                    <i class="fas fa-shield-check text-green-500"></i>
+                    <span>Sistema de Verificación Documental</span>
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-green-50 rounded-2xl border border-green-200">
+                        <i class="fas fa-file-contract text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Validación Automática</h4>
+                        <p class="text-sm text-slate-600">OCR y Computer Vision para verificar permisos sanitarios, licencias de operación y documentos legales</p>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-2xl border border-green-200">
+                        <i class="fas fa-shield-halved text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Seguros Vigentes</h4>
+                        <p class="text-sm text-slate-600">Verificación de pólizas de responsabilidad civil y seguros de vehículo con APIs de aseguradoras</p>
+                    </div>
+                    <div class="p-6 bg-green-50 rounded-2xl border border-green-200">
+                        <i class="fas fa-sync-alt text-3xl text-green-600 mb-4"></i>
+                        <h4 class="font-bold text-slate-900 mb-2">Renovación Proactiva</h4>
+                        <p class="text-sm text-slate-600">Alertas automáticas 60 días antes de vencimiento. Suspensión automática si no se renueva</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Escalabilidad -->
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-3xl p-8 md:p-12 text-white">
+                <div class="flex items-center space-x-4 mb-6">
+                    <i class="fas fa-chart-line text-4xl"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold">Escalabilidad Técnica</h3>
+                        <p class="text-amber-100">Diseñada para crecimiento exponencial</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <p class="text-3xl font-extrabold mb-2">10,000+</p>
+                        <p class="text-sm text-amber-100">Eventos simultáneos</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <p class="text-3xl font-extrabold mb-2">&lt;200ms</p>
+                        <p class="text-sm text-amber-100">Tiempo respuesta API</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <p class="text-3xl font-extrabold mb-2">99.9%</p>
+                        <p class="text-sm text-amber-100">Uptime garantizado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Mejorado -->
+    <footer class="py-12 bg-slate-900 text-white border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="bg-amber-500 p-2 rounded-lg">
+                            <i class="fas fa-truck-fast text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">CONNECT<span class="text-amber-500">TRUCKS</span></span>
+                    </div>
+                    <p class="text-slate-400 text-sm">
+                        Revolucionando el catering móvil con IA y verificación documental.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Información</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#idea" class="hover:text-amber-400 transition">La Idea</a></li>
+                        <li><a href="#numeros" class="hover:text-amber-400 transition">Los Números</a></li>
+                        <li><a href="#plataforma" class="hover:text-amber-400 transition">El Software</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><i class="fas fa-envelope mr-2"></i>contacto@connecttrucks.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500 text-xs tracking-widest uppercase">&copy; 2026 Connect Trucks. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
