@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - Plataforma Connect Trucks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .accent-gradient {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-amber-500 p-2 rounded-lg">
+                        <i class="fas fa-truck-fast text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">CONNECT<span class="text-amber-500">TRUCKS</span></h1>
+                        <p class="text-sm text-slate-600">Cotización de Desarrollo</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-slate-500">Fecha: <span id="fecha"></span></p>
+                    <p class="text-sm text-slate-500">Versión: 1.0</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-6 py-12 max-w-5xl">
+        <!-- Resumen Ejecutivo -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                Resumen <span class="accent-gradient">Ejecutivo</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-amber-50 p-6 rounded-xl border border-amber-200">
+                    <p class="text-3xl font-extrabold text-amber-600 mb-2">12-16</p>
+                    <p class="text-sm text-slate-700 font-semibold">Semanas de Desarrollo</p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <p class="text-3xl font-extrabold text-blue-600 mb-2">3</p>
+                    <p class="text-sm text-slate-700 font-semibold">Fases de Implementación</p>
+                </div>
+                <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+                    <p class="text-3xl font-extrabold text-green-600 mb-2">MVP</p>
+                    <p class="text-sm text-slate-700 font-semibold">Lanzamiento Inicial</p>
+                </div>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+                Esta cotización detalla los costos y recursos necesarios para desarrollar la plataforma Connect Trucks,
+                una solución SaaS B2B que conecta eventos corporativos con food trucks verificados mediante inteligencia artificial.
+            </p>
+        </section>
+
+        <!-- Fase 1: MVP (Meses 1-4) -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-amber-500 text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl">
+                    1
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">
+                    Fase 1: <span class="accent-gradient">MVP</span> (Meses 1-4)
+                </h2>
+            </div>
+
+            <!-- Frontend -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-palette text-blue-500 mr-2"></i>
+                    Desarrollo Frontend
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Componente</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Horas</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Diseño UI/UX y Prototipado</td>
+                                <td class="py-3 text-sm text-right text-slate-600">80h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$4,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Desarrollo React.js/Next.js</td>
+                                <td class="py-3 text-sm text-right text-slate-600">200h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$10,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Dashboard Cliente y Proveedor</td>
+                                <td class="py-3 text-sm text-right text-slate-600">120h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$6,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Sistema de Autenticación</td>
+                                <td class="py-3 text-sm text-right text-slate-600">40h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr class="bg-amber-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Frontend</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">440h</td>
+                                <td class="py-3 text-sm text-right font-bold text-amber-600">$22,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-server text-green-500 mr-2"></i>
+                    Desarrollo Backend
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Componente</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Horas</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Arquitectura API REST (Node.js/Express)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">100h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Sistema de Registro y Verificación</td>
+                                <td class="py-3 text-sm text-right text-slate-600">120h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$6,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Motor de IA Básico (Matching Simple)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">80h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$4,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Sistema de Pagos Integrado</td>
+                                <td class="py-3 text-sm text-right text-slate-600">60h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Base de Datos (PostgreSQL)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">40h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Backend</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">400h</td>
+                                <td class="py-3 text-sm text-right font-bold text-green-600">$20,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Infraestructura y DevOps -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-cloud text-purple-500 mr-2"></i>
+                    Infraestructura y DevOps
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Mensual</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">4 Meses</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">AWS Cloud (EC2, RDS, S3)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$500</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">CDN y Hosting</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$100</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$400</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">CI/CD Pipeline</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$50</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$200</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Monitoreo y Logging</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$100</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$400</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Configuración DevOps (Setup inicial)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">-</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Infraestructura</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">$750/mes</td>
+                                <td class="py-3 text-sm text-right font-bold text-purple-600">$5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Integraciones y Servicios -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-plug text-orange-500 mr-2"></i>
+                    Integraciones y Servicios
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Setup</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Mensual</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Stripe/PayPal (Pagos)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$500</td>
+                                <td class="py-3 text-sm text-right text-slate-600">2.9% + $0.30</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">OCR para Verificación Documental</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$300</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$200</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">APIs de Aseguradoras</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$500</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$150</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Email Service (SendGrid/AWS SES)</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$200</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$50</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">SMS/Notificaciones Push</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$200</td>
+                                <td class="py-3 text-sm text-right text-slate-600">$100</td>
+                            </tr>
+                            <tr class="bg-orange-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Integraciones</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">$1,700</td>
+                                <td class="py-3 text-sm text-right font-bold text-orange-600">$500/mes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Testing y QA -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center">
+                    <i class="fas fa-vial text-red-500 mr-2"></i>
+                    Testing y QA
+                </h3>
+                <div class="bg-slate-50 rounded-xl p-6">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-2 text-sm font-semibold text-slate-700">Actividad</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Horas</th>
+                                <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Testing Funcional</td>
+                                <td class="py-3 text-sm text-right text-slate-600">60h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Testing de Seguridad</td>
+                                <td class="py-3 text-sm text-right text-slate-600">40h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 text-sm text-slate-700">Testing de Carga y Performance</td>
+                                <td class="py-3 text-sm text-right text-slate-600">30h</td>
+                                <td class="py-3 text-sm text-right font-semibold text-slate-900">$1,500</td>
+                            </tr>
+                            <tr class="bg-red-50">
+                                <td class="py-3 text-sm font-bold text-slate-900">Subtotal Testing</td>
+                                <td class="py-3 text-sm text-right font-bold text-slate-900">130h</td>
+                                <td class="py-3 text-sm text-right font-bold text-red-600">$6,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Resumen Fase 1 -->
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl p-6 text-white">
+                <h3 class="text-2xl font-bold mb-4">Resumen Fase 1: MVP</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Total Horas de Desarrollo:</p>
+                        <p class="text-3xl font-extrabold">970h</p>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-90 mb-2">Costo Total Fase 1:</p>
+                        <p class="text-3xl font-extrabold">$61,200</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fase 2: Beta Público (Meses 5-8) -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-orange-500 text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl">
+                    2
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">
+                    Fase 2: <span class="accent-gradient">Beta Público</span> (Meses 5-8)
+                </h2>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 mb-6">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="text-left py-2 text-sm font-semibold text-slate-700">Componente</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Horas</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">App Móvil iOS/Android (React Native)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">300h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$15,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">IA Avanzada con Aprendizaje</td>
+                            <td class="py-3 text-sm text-right text-slate-600">120h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$6,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Asistente Conversacional (Chatbot)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">100h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$5,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Integraciones B2B (APIs)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">80h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$4,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Sistema de Analytics Avanzado</td>
+                            <td class="py-3 text-sm text-right text-slate-600">60h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Infraestructura (4 meses adicionales)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">-</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Integraciones (4 meses adicionales)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">-</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Testing y QA Fase 2</td>
+                            <td class="py-3 text-sm text-right text-slate-600">50h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,500</td>
+                        </tr>
+                        <tr class="bg-orange-50">
+                            <td class="py-3 text-sm font-bold text-slate-900">Subtotal Fase 2</td>
+                            <td class="py-3 text-sm text-right font-bold text-slate-900">710h</td>
+                            <td class="py-3 text-sm text-right font-bold text-orange-600">$40,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fase 3: Lanzamiento Comercial (Meses 9-12) -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-green-500 text-white w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl">
+                    3
+                </div>
+                <h2 class="text-3xl font-bold text-slate-900">
+                    Fase 3: <span class="accent-gradient">Lanzamiento Comercial</span> (Meses 9-12)
+                </h2>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 mb-6">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="text-left py-2 text-sm font-semibold text-slate-700">Componente</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Horas</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Marketing y Adquisición (Estrategia Digital)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">80h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$4,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Expansión Geográfica (Multi-idioma/Región)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">100h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$5,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Programa de Partners Corporativos</td>
+                            <td class="py-3 text-sm text-right text-slate-600">60h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Optimizaciones y Mejoras</td>
+                            <td class="py-3 text-sm text-right text-slate-600">80h</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$4,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Infraestructura (4 meses adicionales)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">-</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Integraciones (4 meses adicionales)</td>
+                            <td class="py-3 text-sm text-right text-slate-600">-</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                        </tr>
+                        <tr class="bg-green-50">
+                            <td class="py-3 text-sm font-bold text-slate-900">Subtotal Fase 3</td>
+                            <td class="py-3 text-sm text-right font-bold text-slate-900">320h</td>
+                            <td class="py-3 text-sm text-right font-bold text-green-600">$21,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Costos Recurrentes Mensuales -->
+        <section class="bg-white rounded-2xl p-8 mb-8 shadow-lg border border-slate-200">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                Costos <span class="accent-gradient">Recurrentes</span> (Post-Lanzamiento)
+            </h2>
+            <div class="bg-slate-50 rounded-xl p-6">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="text-left py-2 text-sm font-semibold text-slate-700">Servicio</th>
+                            <th class="text-right py-2 text-sm font-semibold text-slate-700">Costo Mensual</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Infraestructura Cloud (AWS)</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$750 - $2,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Integraciones y APIs</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$500</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Mantenimiento y Soporte</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$2,000</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 text-sm text-slate-700">Monitoreo y Seguridad</td>
+                            <td class="py-3 text-sm text-right font-semibold text-slate-900">$300</td>
+                        </tr>
+                        <tr class="bg-blue-50">
+                            <td class="py-3 text-sm font-bold text-slate-900">Total Mensual Estimado</td>
+                            <td class="py-3 text-sm text-right font-bold text-blue-600">$3,550 - $4,800</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Resumen Total -->
+        <section class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Resumen Total de Inversión</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+                    <p class="text-sm opacity-90 mb-2">Fase 1: MVP</p>
+                    <p class="text-3xl font-extrabold">$61,200</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+                    <p class="text-sm opacity-90 mb-2">Fase 2: Beta</p>
+                    <p class="text-3xl font-extrabold">$40,500</p>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+                    <p class="text-sm opacity-90 mb-2">Fase 3: Lanzamiento</p>
+                    <p class="text-3xl font-extrabold">$21,000</p>
+                </div>
+            </div>
+            <div class="bg-amber-500 rounded-xl p-6 text-center">
+                <p class="text-sm opacity-90 mb-2">Inversión Total (12 meses)</p>
+                <p class="text-5xl font-extrabold">$122,700</p>
+                <p class="text-sm mt-2 opacity-90">+ Costos recurrentes mensuales: $3,550 - $4,800</p>
+            </div>
+            <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="font-semibold mb-2">Total Horas de Desarrollo:</p>
+                    <p class="text-2xl font-bold">2,000h</p>
+                </div>
+                <div>
+                    <p class="font-semibold mb-2">Timeline:</p>
+                    <p class="text-2xl font-bold">12 meses</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notas y Consideraciones -->
+        <section class="bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Notas y Consideraciones</h2>
+            <ul class="space-y-3 text-slate-700">
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Tarifa de desarrollo:</strong> $50/hora (promedio para equipo senior)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Equipo estimado:</strong> 2-3 desarrolladores full-stack, 1 diseñador UI/UX, 1 QA</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Costos de infraestructura:</strong> Variables según tráfico y uso real</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Pagos de terceros:</strong> Stripe/PayPal cobran comisión por transacción (2.9% + $0.30)</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Escalabilidad:</strong> Costos pueden aumentar con el crecimiento de usuarios</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                    <span><strong>Validez:</strong> Esta cotización es válida por 30 días</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2026 Connect Trucks. Cotización confidencial.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Fecha actual
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('es-ES', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
